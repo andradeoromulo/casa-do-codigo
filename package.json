@@ -1,0 +1,28 @@
+{
+  "name": "casa-do-codigo",
+  "version": "1.0.0",
+  "description": "Projeto da Livraria Casa do Código da Alura",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --ignore *.marko.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andradeoromulo/casa-do-codigo.git"
+  },
+  "author": "Gabriel Leite / Rômulo Andrade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andradeoromulo/casa-do-codigo/issues"
+  },
+  "homepage": "https://github.com/andradeoromulo/casa-do-codigo#readme",
+  "dependencies": {
+    "express": "4.16.3",
+    "marko": "4.13.4-1",
+    "sqlite3": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
+  }
+}
