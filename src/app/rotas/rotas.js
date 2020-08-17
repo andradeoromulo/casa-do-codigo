@@ -9,16 +9,9 @@ const livroDAO = new LivroDAO(db);
 module.exports = (app) => {
     
     app.get('/', (req, resp) => {
-        resp.send(`
-            <html>
-                <head>
-                    <meta charset="utf-8">
-                </head>
-                <body>
-                    <h1>Casa do Código</h1>
-                </body>
-            </html>
-        `)
+        resp.marko(
+            require('../views/base/home/home.marko')
+        );
     });
     
     app.get('/livros', (req, resp) => {
