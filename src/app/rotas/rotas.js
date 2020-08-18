@@ -5,6 +5,9 @@ const db = require('../../config/database');
 const LivroDAO = require('../infra/livro-dao');
 const livroDAO = new LivroDAO(db);
 
+// Importando o express-validator
+const { check, validationResult } = require('express-validator/check');
+
 // Traçando e exportando rotas
 module.exports = (app) => {
     
@@ -45,7 +48,24 @@ module.exports = (app) => {
             ).catch(err => console.log(err));
     });
 
-    app.post('/livros', (req, resp) => {
+    app.post(
+        '/livros',
+        [
+            check('titulo').isLength({ min: 5 }).withMessage('O título deve ter 5 caracteres no mínimo!'),
+            check('preco').isCurrency().withMessage('O preço deve ter formato monetário!')
+        ], 
+        (req, resp) => {
+        
+        const err = validationResult(req);
+
+        if(!err.isEmpty()) {
+            return resp.marko(
+                require('../views/livros/form/form.marko'),
+                {   livro: req.body,
+                    errosValidacao: err.array()
+                }  
+            );
+        }
         
         livroDAO.adiciona(req.body)
             .then(resp.redirect('/livros'))

@@ -23,6 +23,12 @@
         <main class="conteudoPrincipal">
             <div class="container">
                 <h1>Cadastro de livros</h1>
+
+                <div if(data.errosValidacao)>
+                    <div class="alert alert-danger" for (erro in data.errosValidacao)>
+                        ${erro.msg}
+                    </div>
+                </div>
                 
                 <form action="/livros" method="post">
 
@@ -33,15 +39,15 @@
 
                     <div class="form-group">
                         <label for="titulo">Titulo:</label>
-                        <input type="text" id="titulo" name="titulo" value="${data.livro.titulo}" placeholder="coloque o titulo" class="form-control"/>
+                        <input type="text" id="titulo" name="titulo" value="${data.livro.titulo}" placeholder="coloque o titulo" class="form-control" required/>
                     </div>
                     <div class="form-group">
                         <label for="preco">Preço:</label>
-                        <input type="text" id="preco" name="preco" placeholder="150.25" value="${data.livro.preco}" class="form-control"/>
+                        <input type="text" id="preco" name="preco" placeholder="150.25" value="${data.livro.preco}" class="form-control" required/>
                     </div>
                     <div class="form-group">
                         <label for="descricao">Descrição:</label>
-                        <textarea cols="20" rows="10"  id="descricao" name="descricao" placeholder="fale sobre o livro" class="form-control">${data.livro.descricao}</textarea>
+                        <textarea cols="20" rows="10"  id="descricao" name="descricao" placeholder="fale sobre o livro" class="form-control" required>${data.livro.descricao}</textarea>
                     </div>
 
                     <input type="submit" value="Salvar" class="btn btn-primary"/>
