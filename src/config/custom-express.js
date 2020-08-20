@@ -25,6 +25,10 @@ app.use(methodOverride(function (req, res) {
     }
 }));
 
+// Importando configurações de sessão
+const sessaoAutenticacao = require('./sessao-autenticacao');
+sessaoAutenticacao(app);
+
 // Importando as rotas
 const rotas = require('../app/rotas/rotas');
 rotas(app);
