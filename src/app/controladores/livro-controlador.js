@@ -15,6 +15,7 @@ class LivroControlador {
 
     static rotas() {
         return {
+            autenticadas: '/livros*', //todas as URLS de livro/ seguido de qualquer coisa
             lista: '/livros',
             cadastro: '/livros/form',
             edicao: '/livros/form/:id',
