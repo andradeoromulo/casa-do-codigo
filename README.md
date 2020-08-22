@@ -8,6 +8,8 @@ Para usar o projeto, basta clonar o repositório e seguir os seguintes comandos 
 ```
 $ npm install
 $ npm start
+
+Com o servidor rodando, é preciso abrir o navegador e acessar `localhost:3000`. Para se logar, é possível usar as seguintes credenciais: `admin@casadocodigo.com.br` e senha `admin`.
 ```
 
 ## Tecnologias

@@ -25,6 +25,9 @@
 
 .conteudoPrincipal {
     min-height: 70%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
 }
 
 .rodape {

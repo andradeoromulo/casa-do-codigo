@@ -12,11 +12,8 @@ CREATE TABLE IF NOT EXISTS usuarios (
 
 const INSERIR_USUARIO_1 = 
 `
-INSERT INTO usuarios (
-    nome_completo, 
-    email,
-    senha
-) SELECT 'Gabriel Leite', 'gabriel@alura.com.br', '123' WHERE NOT EXISTS (SELECT * FROM usuarios WHERE email = 'gabriel@alura.com.br')
+INSERT INTO usuarios (nome_completo, email, senha) 
+    VALUES ('Admin', 'admin@casadocodigo.com.br', 'admin')
 `;
 
 const LIVROS_SCHEMA = 
